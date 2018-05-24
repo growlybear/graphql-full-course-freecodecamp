@@ -17,10 +17,9 @@ class BookList extends Component {
     let { data } = this.props
     return data.loading
       ? <li>Fetching book data...</li>
-      : data.books.map(book => <li>{ book.name }</li>)
+      : data.books.map(book => <li key={book.id}>{ book.name }</li>)
   }
   render () {
-    console.log(this.props)
     return (
       <ul>
         { this.displayBooks() }
